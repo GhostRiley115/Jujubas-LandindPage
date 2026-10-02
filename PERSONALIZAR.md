@@ -1,62 +1,58 @@
-# Seu guia de personalização
+# Personalizar o portfólio
 
-Os arquivos que o navegador usa ficam em `public/images/`. Nos textos de configuração, escreva `images/nome-do-arquivo.png`, sem `public/` e sem barra inicial. Prefira nomes sem espaços e sem acentos.
+## Logos
 
-## 1. Logo da empresa
+As logos originais estão em `public/images/`:
 
-Já incluí a identidade extraída do documento:
+- `jujuba-logo-light.svg`: texto escuro para o tema claro.
+- `jujuba-logo-dark.svg`: texto claro para o tema escuro.
+- `jujuba-simbolo.svg`: ararajuba usada na capa, em Sobre e na galeria.
+- `kiora-logo.svg`: logo clara do Kiora aplicada sobre imagens.
 
-- `public/images/logo-jujubas.png`: logo horizontal original, disponível para uso.
-- `public/images/jujubas-identidade.jpg`: versão vertical, exibida em “Sobre nós”.
+Os caminhos da marca ficam em `company`, no arquivo `src/content.js`. O favicon original está em `public/favicon.ico`.
 
-O cabeçalho usa uma assinatura tipográfica compacta criada para a página. Para trocar pela logo original, defina `headerLogo: 'images/logo-jujubas.png'` em `company`, no arquivo `src/content.js`. A mesma troca será aplicada ao rodapé. Um SVG ou PNG transparente exportado do arquivo original da marca é a melhor opção. A versão extraída do DOCX tem fundo claro.
+## Imagens dos projetos
 
-## 2. Capturas reais do Kiora — falta você adicionar
+Cada entrada em `projects[].platforms[]`, no arquivo `src/content.js`, possui:
 
-Salve, por exemplo:
+- `image`: caminho da imagem a partir de `public/` (ex.: `images/kiora-web.webp`).
+- `imageAlt`: descrição acessível da imagem.
+- `caption`: legenda que informa sua origem ou finalidade.
+- `visualType`: `brand` para imagens ilustrativas que preenchem a área; `screen` para capturas inteiras; `mockup` para mockups de dispositivos.
 
-- `public/images/kiora-web.webp`: página do delivery, de preferência 1440 × 1000 px.
-- `public/images/kiora-app.webp`: tela do aplicativo, por exemplo 900 × 1600 px.
+Kiora usa materiais ilustrativos de gastronomia e ambientação enviados pelo autor, identificados na página. Ainda não são capturas do delivery nem do aplicativo. Ao receber as capturas, coloque-as em `public/images/`, altere o caminho e use `visualType: 'screen'`. A sobreposição da logo Kiora aparece apenas em imagens do tipo `brand`.
 
-Em `src/content.js`, dentro do projeto `kiora`, há duas entradas em `platforms`. Troque `image: ''` por `image: 'images/kiora-web.webp'` na entrada “Web delivery” e por `image: 'images/kiora-app.webp'` na entrada “Aplicativo”. A captura substitui automaticamente a composição conceitual. Não é preciso alterar o componente.
+TechStart já usa a captura da landing page e o mockup original do sistema desktop. O mockup do aplicativo Juntaê não foi usado como se fosse o sistema desktop.
 
-Evite capturas com dados pessoais, pedidos reais ou informações de clientes.
+## Galeria
 
-## 3. Capturas reais da TechStart — falta você adicionar
-
-- `public/images/techstart-web.webp`: captura da landing page.
-- `public/images/techstart-desktop.webp`: captura do CRUD de eventos.
-
-Preencha o campo `image` das respectivas plataformas do projeto `techstart`, da mesma forma que no Kiora. As imagens são exibidas inteiras, sem recortar a interface.
-
-## 4. Galeria
-
-A galeria já usa três materiais do documento, sem os cartões que expõem contatos fictícios. Para acrescentar imagens, salve os arquivos em `public/images/galeria/` e adicione um objeto ao array `gallery`:
+Adicione um item ao array `gallery`:
 
 ```js
 {
-  src: 'images/galeria/kiora-tela-inicial.webp',
-  title: 'A experiência de pedir um lámen',
-  category: 'Kiora',
-  alt: 'Tela inicial do delivery Kiora com o cardápio de lámen'
+  src: 'images/galeria/minha-imagem.webp',
+  title: 'Título do material',
+  category: 'TechStart',
+  alt: 'Descrição do que aparece na imagem',
+  kind: 'Captura do sistema',
+  fit: 'contain'
 }
 ```
 
-As categorias atuais são `Jujuba’s Dev` e `Kiora`. Para incluir TechStart como filtro, acrescente `TechStart` à lista de filtros no componente `Gallery`, em `src/main.jsx`, e use essa categoria nas novas imagens. O filtro “Todos” já mostra qualquer imagem adicionada.
+O filtro da categoria aparece automaticamente. Use `contain` para mostrar a imagem inteira e `cover` para fotografias que podem preencher o quadro. Evite imagens com informações pessoais. Use nomes sem espaços e sem acentos.
 
-Prefira WebP/JPG para fotos e capturas, até cerca de 500 KB por arquivo; PNG/SVG para logos. Escreva um texto alternativo descritivo em `alt`.
+## Cores, temas e animações
 
-## 5. Contato — falta confirmar
+`src/identity.css` concentra os ajustes atuais. As variáveis de `:root` são do modo claro, e as de `[data-theme=dark]`, do modo escuro. O botão do cabeçalho acompanha o sistema na primeira visita e guarda a escolha localmente depois de um clique. As animações respeitam a opção de reduzir movimento do dispositivo.
 
-Em `src/content.js`, preencha `company.email` com o endereço que realmente deseja divulgar. Isso ativa o botão para abrir o aplicativo de e-mail do visitante. Não existe formulário nem servidor de envio. Enquanto o campo estiver vazio, o site não oferece contato fictício.
+## Contato e textos
 
-## 6. Informações
+Preencha `company.email` em `src/content.js` para ativar o botão de e-mail. Sem esse campo, o site mantém a chamada para conhecer os projetos, sem publicar contatos fictícios.
 
-- Links externos, descrições e recursos dos sistemas: `src/content.js`.
-- História, missão, visão e textos da capa: `src/main.jsx`.
-- Cores da empresa: variáveis no início de `src/styles.css`.
-- Título da aba e resumo para buscadores: `index.html`.
+Textos dos projetos, funcionalidades, links e valores: `src/content.js`. Textos institucionais e capa: `src/main.jsx`. Título da aba e descrição para buscadores: `index.html`.
 
-Confirme o estágio de desenvolvimento das funcionalidades antes da apresentação do TCC. Não foram inventados números de clientes, depoimentos, resultados comerciais ou integrantes da equipe.
+## Origem e tamanho das imagens
 
-Após alterar, confira com `npm run dev`; para publicar, envie as mudanças ao repositório conectado à hospedagem.
+Os materiais selecionados foram copiados para dentro do projeto e convertidos para WebP, reduzindo cerca de 10,7 MB para 1,3 MB no conjunto convertido. As logos permanecem em SVG. Os originais enviados não foram alterados.
+
+Consulte `public/images/ORIGEM-DOS-ARQUIVOS.md` para rastrear cada arquivo.
