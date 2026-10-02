@@ -1,10 +1,10 @@
-// Edite aqui os textos, links e imagens. Caminhos de imagens partem de public/.
+// Conteúdo institucional e metadados dos projetos.
 export const company = {
   name: "Jujuba's Dev",
   headerLogo: 'images/jujuba-logo-light.svg',
   headerLogoDark: 'images/jujuba-logo-dark.svg',
   symbol: 'images/jujuba-simbolo.svg',
-  email: '', // Insira um e-mail real para ativar o contato.
+  email: '',
   logo: 'images/jujuba-logo-light.svg',
   tagline: 'if(you need) { we code }',
 };
@@ -17,8 +17,8 @@ export const projects = [
   },
   { id: 'techstart', number: '02', name: 'TechStart', category: 'EVENTOS & CONEXÕES', headline: 'Grandes encontros começam com uma ideia.', description: 'Uma proposta de startup que conecta presença digital e organização de eventos. Da apresentação da ideia ao gerenciamento no desktop.', url: 'https://ghostriley115.github.io/techstart-landing-page/', linkLabel: 'Visitar a TechStart', logo: 'images/techstart-simbolo.webp',
     platforms: [
-      { name: 'Landing page', title: 'Uma ideia que merece ser vista.', text: 'Página de apresentação da startup, sua proposta e a solução para eventos.', features: ['Apresentação da startup', 'Proposta da solução', 'Presença digital'], image: 'images/techstart-site.webp', visualType: 'screen', imageAlt: 'Captura da landing page TechStart fornecida no projeto original', caption: 'Landing page · captura do projeto fornecido' },
-      { name: 'Sistema desktop', title: 'Cada evento no seu lugar.', text: 'Sistema de gerenciamento para cadastrar, consultar, atualizar e excluir eventos.', features: ['Cadastro de eventos', 'Consulta e edição', 'Exclusão de registros'], image: 'images/techstart-desktop.webp', visualType: 'mockup', imageAlt: 'Mockup de notebook com o sistema desktop TechStart', caption: 'Sistema desktop · mockup do projeto original' },
+      { name: 'Landing page', title: 'Uma ideia que merece ser vista.', text: 'Página de apresentação da startup, sua proposta e a solução para eventos.', features: ['Apresentação da startup', 'Proposta da solução', 'Presença digital'], image: 'images/techstart-site.webp', visualType: 'screen', imageAlt: 'Captura da landing page TechStart', caption: 'TechStart · landing page' },
+      { name: 'Sistema desktop', title: 'Cada evento no seu lugar.', text: 'Sistema de gerenciamento para cadastrar, consultar, atualizar e excluir eventos.', features: ['Cadastro de eventos', 'Consulta e edição', 'Exclusão de registros'], image: 'images/techstart-desktop.webp', visualType: 'mockup', imageAlt: 'Mockup de notebook com o sistema desktop TechStart', caption: 'TechStart · sistema desktop' },
     ]
   }
 ];
