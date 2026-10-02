@@ -1,3 +1,5 @@
+![Jujuba’s Dev — boas ideias merecem ganhar asas](assets/readme/cover.svg)
+
 <div align="center">
   <img src="public/images/jujuba-simbolo.svg" alt="Símbolo da Jujuba’s Dev" width="140" />
 
@@ -48,6 +50,33 @@ Uma landing page de apresentação da startup e um sistema desktop para cadastra
 **React 19 · Vite 7 · JavaScript · CSS · Lucide React · GitHub Actions · GitHub Pages**
 
 O portfólio é uma aplicação estática. Os sistemas de delivery, reservas e gestão de eventos são projetos apresentados por ele, não funcionalidades executadas dentro desta aplicação.
+
+## Explorar o código
+
+| Parte | Responsabilidade |
+| :--- | :--- |
+| `src` | Componentes, conteúdo, estilos e comportamento da interface |
+| `public/images` | Logos, fotografias ilustrativas e mockups |
+| `.github/workflows` | Publicação automática no GitHub Pages |
+
+### Executar localmente
+
+Use Node.js 22.12 ou superior compatível com o Vite 7:
+
+```bash
+git clone https://github.com/GhostRiley115/Jujubas-LandindPage.git
+cd Jujubas-LandindPage
+npm ci
+npm run dev
+```
+
+Para gerar a versão de distribuição, execute `npm run build`. Para conferir esse resultado localmente, use `npm run preview`.
+
+## Repositórios das soluções
+
+- [Kiora · sistema web de delivery](https://github.com/GhostRiley115/KioraRestaurante)
+- [TechStart · aplicação desktop](https://github.com/GhostRiley115/crud-desktop-app)
+- [TechStart · landing page](https://github.com/GhostRiley115/techstart-landing-page)
 
 ## Contexto acadêmico
 
