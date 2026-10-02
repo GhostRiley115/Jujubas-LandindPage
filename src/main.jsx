@@ -13,7 +13,7 @@ function Logo() {
 function Header() {
  const [open, setOpen] = useState(false);
  useEffect(() => { const close = e => { if(e.key === 'Escape') setOpen(false); }; window.addEventListener('keydown', close); return () => window.removeEventListener('keydown', close); }, []);
- return <header className="header"><div className="nav-wrap"><Logo/><div className="nav-controls"><ThemeToggle/><button className="menu-toggle" aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button></div><nav id="navigation" className={open ? 'navigation open' : 'navigation'}>{nav.map(([id,label]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>{label}</a>)}<a href="#contato" className="nav-contact" onClick={() => setOpen(false)}>Vamos conversar <ArrowUpRight size={17}/></a></nav></div></header>;
+ return <header className="header"><div className="nav-wrap"><Logo/><div className="nav-controls"><ThemeToggle/><button className="menu-toggle" aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open} aria-controls="navigation" onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button></div><nav id="navigation" className={open ? 'navigation open' : 'navigation'}>{nav.map(([id,label]) => <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>{label}</a>)}<a href="https://wa.me/5511942764888" target="_blank" rel="noopener noreferrer" aria-label="Vamos conversar pelo WhatsApp (abre em nova aba)" className="nav-contact" onClick={() => setOpen(false)}>Vamos conversar <ArrowUpRight size={17}/></a></nav></div></header>;
 }
 function HeroArt() {
  return <div className="hero-art brand-art" aria-hidden="true">
